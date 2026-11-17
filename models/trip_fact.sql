@@ -8,7 +8,7 @@ WITH BIKE AS (
     timestampdiff(second,to_timestamp(started_at), to_timestamp(ended_at)) as trip_duration_seconds
     FROM 
     {{ ref('stg_bike') }}
-    WHERE RIDE_ID != 'ride_id'
+    where RIDE_ID != '"bikeid"' and RIDE_ID != 'bikeid'
 )
 
 SELECT * FROM BIKE
